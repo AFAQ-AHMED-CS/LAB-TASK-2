@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Angular</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+	<style>
+		body {
+			margin: 0px;
+		}
+
+		.BOX {
+			height: auto;
+			width: 550px;
+			margin: 30px;
+			border: 2px solid black;
+			padding: 10px;
+			box-shadow: 5px 10px;
+		}
+		label {
+			font-size: 20px;
+			font-weight: 500;
+			letter-spacing: normal;
+			border: 1px solid black;
+			background-color: black;
+			color: white;
+			padding: 0px 2px 0px 3px;
+			margin: 0px;
+			position: absolute;
+		}
+
+		input {
+			border: 1px solid black;
+			padding: 4px;
+			margin: 0px;
+			margin-left: 70px;
+		}
+		
+		hr{
+			margin: 10px 0px 10px 0px;
+			border: 1px solid black;
+		}
+		h1{
+			text-align: right;
+			margin: 0px;
+		}
+	</style>
+</head>
+
+<body>
+	<script>
+		var myapp = angular.module("myApp", []);
+		myapp.controller("myControler", function($scope) {
+			$scope.number1 = 0;
+			$scope.number2 = 0;
+			myName = "Afaq Ahmed";
+			$scope.getName = function() {
+				return myName;
+			}
+			$scope.multiplyNum = function() {
+				return $scope.number1 * $scope.number2;
+
+			}
+
+		});
+
+	</script>
+	<div  class="BOX" ng-app="myApp" ng-controller="myControler">
+		<form ng-init="myvar=5">
+			<label>Num 1</label>
+			<input type="text" ng-model="number1" />
+			<label>Num 2</label>
+			<input type="text" ng-model="number2" />
+		</form>
+		<hr/>
+		<p> {{number1}} multiply by {{number2}} = {{multiplyNum()}}</p>
+		<hr/>
+		<h1>{{getName()}}</h1>
+
+	</div>
+
+
+</body>
+
+</html>
